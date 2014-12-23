@@ -2,7 +2,7 @@ FROM shiwen/java
 
 MAINTAINER shiwen
 
-ADD kafka /opt/kafka
+ADD kafka /usr/lib/kafka
 ADD conf /etc/kafka
 ADD kafka-run-class.sh /usr/bin/kafka-run-class.sh
 ADD start-kafka.sh /usr/bin/start-kafka.sh
