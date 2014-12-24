@@ -2,13 +2,13 @@ FROM shiwen/java
 
 MAINTAINER shiwen
 
-ADD kafka /usr/lib/kafka
-ADD conf /etc/kafka
-ADD kafka-run-class.sh /usr/bin/kafka-run-class.sh
-ADD start-kafka.sh /usr/bin/start-kafka.sh
+COPY kafka /usr/lib/kafka
+COPY conf /etc/kafka
+COPY kafka-run-class.sh /usr/bin/
+COPY start-kafka.sh /usr/bin/
 
 EXPOSE 9092
 
 VOLUME ["/var/lib/kafka", "/var/log/kafka"]
 
-CMD start-kafka.sh
+CMD ["/usr/bin/start-kafka.sh"]
